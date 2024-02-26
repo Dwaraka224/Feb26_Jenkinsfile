@@ -3,17 +3,16 @@ pipeline {
 
 
     stages {
-        stage('Build') {
+        stage('git') {
             steps {
                 // Get some code from a GitHub repository
                 git "https://github.com/Dwaraka224/Feb26_Jenkinsfile.git"
 
-                // Run Maven on a Unix agent.
+                
                 sh "java Demo.java"
                 sh "python3 main.py"
 
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                
             }
         }
     }
